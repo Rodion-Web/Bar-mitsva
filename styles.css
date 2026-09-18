@@ -2304,9 +2304,10 @@ footer {
     }
 }
 
-/* Supplied invitation backgrounds */
+/* Composed invitation artwork: original assets retain their proportions */
 .hero {
-    background: url('assets/background-desctop.png') center / cover no-repeat;
+    min-height: 800px;
+    background: url('assets/main-background.png') center / cover no-repeat;
 }
 
 .hero::before,
@@ -2314,10 +2315,91 @@ footer {
     display: none;
 }
 
+.hero-art {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-art img {
+    position: absolute;
+    display: block;
+    max-width: none;
+    height: auto;
+    opacity: 0;
+    animation: floral-appear 1.1s cubic-bezier(.22, .61, .36, 1) forwards;
+}
+
+.hero-flower-top {
+    top: 0;
+    left: 0;
+    width: min(42vw, 530px);
+    animation-delay: 2.45s !important;
+}
+
+.hero-flower-bottom {
+    right: 0;
+    bottom: 0;
+    width: min(37vw, 470px);
+    animation-delay: 2.64s !important;
+}
+
+.hero-mark {
+    bottom: 4.5vh;
+    left: 6vw;
+    width: min(20vw, 250px);
+    animation-delay: 2.82s !important;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+@keyframes floral-appear {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 @media (max-width: 720px) {
     .hero {
-        background-image: url('assets/background-mobile.png');
-        background-position: center top;
+        min-height: 820px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content {
+        width: min(350px, 88vw);
+        margin-top: 155px;
+    }
+
+    .hero-flower-top {
+        width: min(91vw, 430px);
+    }
+
+    .hero-flower-bottom {
+        width: min(82vw, 380px);
+        right: 0;
+    }
+
+    .hero-mark {
+        bottom: 28px;
+        left: 6vw;
+        width: min(47vw, 205px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-art img {
+        opacity: 1;
+        animation: none;
     }
 }
 
@@ -2328,7 +2410,7 @@ footer {
 
     .invitation-line {
         margin-bottom: 20px;
-        font-size: 25px;
+        font-size: 21px;
         line-height: 1.28;
     }
 

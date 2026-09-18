@@ -1548,6 +1548,142 @@ body.splash-active {
     }
 }
 
+/* Festive colour refresh — based on the olive and gold logo palette */
+:root {
+    --paper: #fff9ed;
+    --cream: #fff9ed;
+    --ink: #263b29;
+    --olive: #456137;
+    --gold: #d5a12c;
+    --mustard: #e5b947;
+    --coral: #d96f4d;
+    --teal: #517946;
+    --line: rgba(69, 97, 55, .22);
+}
+
+body {
+    background: #fff9ed;
+}
+
+.hero {
+    background: linear-gradient(135deg, #fffdf6 0%, #fff4d3 52%, #f3d77e 100%);
+}
+
+.hero::before {
+    background:
+        radial-gradient(circle at 14% 20%, rgba(213, 161, 44, .34) 0 3px, transparent 4px),
+        radial-gradient(circle at 82% 27%, rgba(69, 97, 55, .25) 0 4px, transparent 5px),
+        radial-gradient(circle at 76% 75%, rgba(213, 161, 44, .28) 0 2px, transparent 3px),
+        radial-gradient(ellipse at 50% 100%, rgba(213, 161, 44, .24), transparent 50%);
+}
+
+.hero::after {
+    border-color: rgba(213, 161, 44, .46);
+    background: linear-gradient(105deg, transparent 18%, rgba(255, 255, 255, .5) 50%, transparent 80%);
+}
+
+.nav {
+    border-color: rgba(213, 161, 44, .68);
+    background: rgba(255, 253, 246, .58);
+    box-shadow: 0 9px 26px rgba(115, 84, 22, .08);
+}
+
+.hero h1 em,
+.eyebrow,
+.section-kicker {
+    color: #c48c12;
+}
+
+.circle-link {
+    border-color: var(--gold);
+    background: #fffdf7;
+    box-shadow: 0 7px 18px rgba(196, 140, 18, .18);
+}
+
+.circle-link:hover {
+    background: var(--gold);
+}
+
+.intro {
+    background: linear-gradient(120deg, #fff9ed, #fff1cf);
+}
+
+.date-card {
+    background: linear-gradient(145deg, #54753d, #304b2d);
+    border: 2px solid #e4bd58;
+    border-radius: 18px;
+    box-shadow: 13px 15px 0 rgba(213, 161, 44, .34), 0 16px 35px rgba(48, 75, 45, .18);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.date-card:hover {
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: 17px 20px 0 rgba(213, 161, 44, .3), 0 22px 42px rgba(48, 75, 45, .2);
+}
+
+.schedule {
+    background: linear-gradient(125deg, #31512e, #55743c 68%, #6f873d);
+    border-color: #e5b947;
+}
+
+.schedule .section-kicker,
+.time,
+.accent-item h3 {
+    color: #ffd96f;
+}
+
+.location {
+    background: linear-gradient(135deg, #fff7df, #f5df9e);
+}
+
+.calendar-section {
+    background: linear-gradient(135deg, #f8dd8f, #f3c952);
+}
+
+.calendar {
+    border: 2px solid rgba(69, 97, 55, .45);
+    border-radius: 14px;
+    box-shadow: 10px 12px 0 rgba(255, 250, 237, .55);
+}
+
+.day.selected {
+    background: var(--olive);
+    box-shadow: 0 4px 0 rgba(38, 59, 41, .18);
+}
+
+.rsvp {
+    background: linear-gradient(135deg, #fffdf7, #fff0c7);
+}
+
+.submit-button {
+    background: linear-gradient(135deg, #e1ad31, #c88b13);
+    color: #253c28;
+    border-radius: 4px;
+    box-shadow: 0 8px 18px rgba(196, 140, 18, .23);
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #52733e, #34532f);
+    color: #fff9ed;
+}
+
+.rsvp-ornament span,
+.rsvp-ornament::before,
+.rsvp-ornament::after {
+    border-color: #cf9718;
+}
+
+footer {
+    background: linear-gradient(110deg, #304c2d, #59763c 55%, #385b30);
+    border-top-color: #e9bf50;
+}
+
+@media (max-width: 720px) {
+    .hero {
+        background: linear-gradient(155deg, #fffdf6, #fff0c8 70%, #f2cf67);
+    }
+}
+
 /* RSVP finishing note, ornament and scroll-in motion */
 .rsvp {
     position: relative;

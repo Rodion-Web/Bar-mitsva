@@ -2249,7 +2249,8 @@ footer {
     color: #28432f;
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 600;
-    letter-spacing: -.025em;
+    line-height: .95;
+    letter-spacing: -.015em;
     text-wrap: balance;
 }
 
@@ -2257,6 +2258,16 @@ footer {
     color: #bb8513;
     font-style: italic;
     font-weight: 600;
+}
+
+.hero-name {
+    display: block;
+    margin-top: 8px;
+    color: #9d6e0c;
+    font-size: 1.16em;
+    font-style: italic;
+    letter-spacing: .01em;
+    line-height: .9;
 }
 
 .hero-content > * {
@@ -2288,5 +2299,27 @@ footer {
     .hero-content > * {
         opacity: 1;
         animation: none;
+    }
+}
+
+@media (max-width: 720px) {
+    .hero-content {
+        width: min(355px, 90vw);
+    }
+
+    .invitation-line {
+        margin-bottom: 20px;
+        font-size: 25px;
+        line-height: 1.28;
+    }
+
+    .hero h1 {
+        font-size: clamp(35px, 9.8vw, 39px);
+        line-height: 1.02;
+    }
+
+    .hero-name {
+        margin-top: 11px;
+        font-size: 1.2em;
     }
 }

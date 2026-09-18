@@ -83,7 +83,6 @@ form.addEventListener("submit", async (event) => {
 			.map((guest) => guest.trim())
 			.filter(Boolean),
 	};
-
 	if (!GOOGLE_APPS_SCRIPT_URL) {
 		formMessage.textContent = "Форма ещё не подключена к таблице Google Drive.";
 		return;

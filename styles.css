@@ -2304,6 +2304,23 @@ footer {
     }
 }
 
+/* Supplied invitation backgrounds */
+.hero {
+    background: url('assets/background-desctop.png') center / cover no-repeat;
+}
+
+.hero::before,
+.hero::after {
+    display: none;
+}
+
+@media (max-width: 720px) {
+    .hero {
+        background-image: url('assets/background-mobile.png');
+        background-position: center top;
+    }
+}
+
 @media (max-width: 720px) {
     .hero-content {
         width: min(355px, 90vw);

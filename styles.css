@@ -2262,12 +2262,14 @@ footer {
 
 .hero-name {
     display: block;
-    margin-top: 8px;
+    margin-top: 13px;
     color: #9d6e0c;
-    font-size: 1.16em;
-    font-style: italic;
-    letter-spacing: .01em;
-    line-height: .9;
+    font-family: 'Marck Script', cursive;
+    font-size: 1.42em;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: .02em;
+    line-height: .82;
 }
 
 .hero-content > * {

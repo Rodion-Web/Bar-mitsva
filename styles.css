@@ -2519,8 +2519,8 @@ footer {
     }
 
     .hero-mark {
-        top: 11%;
-        right: 21%;
+        /* top: 11%;
+        right: 21%; */
         width: min(17vw, 230px);
     }
 
@@ -2799,36 +2799,90 @@ footer {
         background: #b98720;
     }
 
-    .torah-roller::before { top: -3px; }
-    .torah-roller::after { bottom: -3px; }
-    .torah-roller-left { left: 50%; animation: torah-left 3.6s 3.75s ease-in-out infinite; }
-    .torah-roller-right { right: 50%; animation: torah-right 3.6s 3.75s ease-in-out infinite; }
+    .torah-roller::before {
+        top: -3px;
+    }
+
+    .torah-roller::after {
+        bottom: -3px;
+    }
+
+    .torah-roller-left {
+        left: 50%;
+        animation: torah-left 3.6s 3.75s ease-in-out infinite;
+    }
+
+    .torah-roller-right {
+        right: 50%;
+        animation: torah-right 3.6s 3.75s ease-in-out infinite;
+    }
 
     @keyframes torah-unfold {
-        0%, 18% { transform: translateX(-50%) scaleX(.12); }
-        46%, 72% { transform: translateX(-50%) scaleX(1); }
-        100% { transform: translateX(-50%) scaleX(.12); }
+
+        0%,
+        18% {
+            transform: translateX(-50%) scaleX(.12);
+        }
+
+        46%,
+        72% {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        100% {
+            transform: translateX(-50%) scaleX(.12);
+        }
     }
 
     @keyframes torah-left {
-        0%, 18% { transform: translateX(-5px); }
-        46%, 72% { transform: translateX(-49px); }
-        100% { transform: translateX(-5px); }
+
+        0%,
+        18% {
+            transform: translateX(-5px);
+        }
+
+        46%,
+        72% {
+            transform: translateX(-49px);
+        }
+
+        100% {
+            transform: translateX(-5px);
+        }
     }
 
     @keyframes torah-right {
-        0%, 18% { transform: translateX(5px); }
-        46%, 72% { transform: translateX(49px); }
-        100% { transform: translateX(5px); }
+
+        0%,
+        18% {
+            transform: translateX(5px);
+        }
+
+        46%,
+        72% {
+            transform: translateX(49px);
+        }
+
+        100% {
+            transform: translateX(5px);
+        }
     }
 
     @keyframes torah-fade-in {
-        from { opacity: 0; transform: translateY(8px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .torah-opening,
     .torah-parchment,
     .torah-roller-left,
@@ -2836,10 +2890,21 @@ footer {
         animation: none !important;
     }
 
-    .torah-opening { opacity: 1; }
-    .torah-parchment { transform: translateX(-50%) scaleX(1); }
-    .torah-roller-left { transform: translateX(-49px); }
-    .torah-roller-right { transform: translateX(49px); }
+    .torah-opening {
+        opacity: 1;
+    }
+
+    .torah-parchment {
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    .torah-roller-left {
+        transform: translateX(-49px);
+    }
+
+    .torah-roller-right {
+        transform: translateX(49px);
+    }
 }
 
 @media (max-width: 720px) {

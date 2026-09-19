@@ -2705,6 +2705,143 @@ footer {
     }
 }
 
+/* Delicate dotted scroll indicator */
+.circle-link {
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+.circle-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 31px;
+    background: repeating-linear-gradient(to bottom, #315b3a 0 4px, transparent 4px 9px);
+    transform: translateX(-50%);
+}
+
+.circle-link::after {
+    content: '⌄';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    color: #315b3a;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    transform: translateX(-50%) scaleX(1.25);
+}
+
+/* Opening Torah scroll ornament */
+.torah-opening {
+    display: none;
+}
+
+@media (max-width: 720px) {
+    .torah-opening {
+        position: absolute;
+        bottom: 5.5%;
+        left: 6vw;
+        z-index: 2;
+        display: block;
+        width: 116px;
+        height: 58px;
+        animation: torah-fade-in .7s 3.55s ease both;
+    }
+
+    .torah-parchment {
+        position: absolute;
+        top: 8px;
+        bottom: 8px;
+        left: 50%;
+        display: grid;
+        width: 88px;
+        place-items: center;
+        border-top: 1px solid #b88822;
+        border-bottom: 1px solid #b88822;
+        background: linear-gradient(90deg, #ead093, #fff5d7 18%, #fff9e8 82%, #ead093);
+        color: #315b3a;
+        font-family: Georgia, serif;
+        font-size: 12px;
+        letter-spacing: .1em;
+        transform: translateX(-50%) scaleX(.12);
+        transform-origin: center;
+        animation: torah-unfold 3.6s 3.75s ease-in-out infinite;
+    }
+
+    .torah-roller {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 10px;
+        height: 58px;
+        border: 1px solid #a87817;
+        border-radius: 7px;
+        background: linear-gradient(90deg, #b98720, #f0d36c 45%, #9d6e16);
+        box-shadow: 0 1px 4px rgba(77, 61, 24, .18);
+    }
+
+    .torah-roller::before,
+    .torah-roller::after {
+        content: '';
+        position: absolute;
+        left: -3px;
+        width: 14px;
+        height: 4px;
+        border-radius: 50%;
+        background: #b98720;
+    }
+
+    .torah-roller::before { top: -3px; }
+    .torah-roller::after { bottom: -3px; }
+    .torah-roller-left { left: 50%; animation: torah-left 3.6s 3.75s ease-in-out infinite; }
+    .torah-roller-right { right: 50%; animation: torah-right 3.6s 3.75s ease-in-out infinite; }
+
+    @keyframes torah-unfold {
+        0%, 18% { transform: translateX(-50%) scaleX(.12); }
+        46%, 72% { transform: translateX(-50%) scaleX(1); }
+        100% { transform: translateX(-50%) scaleX(.12); }
+    }
+
+    @keyframes torah-left {
+        0%, 18% { transform: translateX(-5px); }
+        46%, 72% { transform: translateX(-49px); }
+        100% { transform: translateX(-5px); }
+    }
+
+    @keyframes torah-right {
+        0%, 18% { transform: translateX(5px); }
+        46%, 72% { transform: translateX(49px); }
+        100% { transform: translateX(5px); }
+    }
+
+    @keyframes torah-fade-in {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .torah-opening,
+    .torah-parchment,
+    .torah-roller-left,
+    .torah-roller-right {
+        animation: none !important;
+    }
+
+    .torah-opening { opacity: 1; }
+    .torah-parchment { transform: translateX(-50%) scaleX(1); }
+    .torah-roller-left { transform: translateX(-49px); }
+    .torah-roller-right { transform: translateX(49px); }
+}
+
 @media (max-width: 720px) {
     .hero-content {
         position: absolute;
